@@ -17,20 +17,20 @@ public class VehicleComparator implements Comparator<Vehicle>{
                 bParked = ((Parkable) b).isParked();
             }
 
-            // 1. Parked first
+         
             if (aParked != bParked) {
                 return bParked ? 1 : -1;
             }
 
-            // 2. Type order
+       
             int typeCompare = getTypeOrder(a) - getTypeOrder(b);
             if (typeCompare != 0) return typeCompare;
 
-            // 3. Name
+        
             int nameCompare = a.getName().compareTo(b.getName());
             if (nameCompare != 0) return nameCompare;
 
-            // 4. Fuel TYPE
+         
             int fuelTypeA = (a instanceof CombustionVehicle)
                     ? ((CombustionVehicle) a).getSupportedFuelMask() : 0;
 
@@ -40,7 +40,6 @@ public class VehicleComparator implements Comparator<Vehicle>{
             int fuelTypeCompare = Integer.compare(fuelTypeA, fuelTypeB);
             if (fuelTypeCompare != 0) return fuelTypeCompare;
 
-            // 5. Fuel AMOUNT
             double fuelA = (a instanceof CombustionVehicle)
                     ? ((CombustionVehicle) a).getFuelAmount() : 0;
 
