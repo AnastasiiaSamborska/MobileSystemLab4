@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         txtOutput = findViewById(R.id.txtOutput);
 
-        // 🔹 ADD VEHICLE
+        
         btnAdd.setOnClickListener(v -> {
             String name = etName.getText().toString();
             String type = etType.getText().toString().toLowerCase();
@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // 🔹 PARK VEHICLE
+        
         btnPark.setOnClickListener(v -> {
             try {
                 int id = Integer.parseInt(etVehicleId.getText().toString());
@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // 🔹 REMOVE VEHICLE
+        
         btnRemove.setOnClickListener(v -> {
             try {
                 int id = Integer.parseInt(etVehicleId.getText().toString());
